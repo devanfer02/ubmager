@@ -7,7 +7,17 @@ export default {
   ],
   prefix: "tw-",
   theme: {
-    extend: {},
+    container: {
+      center:true,
+      padding: '20px'
+    },
+    extend: {
+      colors: {
+        'cst-yellow': '#EDE700',
+        'cst-black': '#0C1C29',
+        'cst-blue': '#0F3446',
+      }
+    },
   },
   plugins: [],
 }
