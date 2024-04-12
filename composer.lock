@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f67fa4f47f4251e2e6b9b94e684924ab",
+    "content-hash": "b1b94a5339cbebc3bfa2c3ec96a68236",
     "packages": [
         {
             "name": "brick/math",
@@ -1888,6 +1888,56 @@
                 }
             ],
             "time": "2024-01-28T23:22:08+00:00"
+        },
+        {
+            "name": "mirzahilmi/siamub-auth",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MirzaHilmi/SIAMUB-Auth.git",
+                "reference": "c8f38c3040c0625f6fb2f6f72923aa5847f86128"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MirzaHilmi/SIAMUB-Auth/zipball/c8f38c3040c0625f6fb2f6f72923aa5847f86128",
+                "reference": "c8f38c3040c0625f6fb2f6f72923aa5847f86128",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": ">=6.0",
+                "php": ">=7.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SIAMUBAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mirza Hilmi",
+                    "email": "exquisitemirza@gmail.com"
+                }
+            ],
+            "description": "MirzaHilmi/SIAMUB-Auth is a PHP Composer package designed for educational purposes. It allows you to authenticate and retrieve information from the SIAM UB Authentication system, a web authentication system used by college. This package utilizes web scraping techniques and the Guzzle HTTP library to automate the retrieval of data. Please note that this package should only be used responsibly and with proper authorization.",
+            "homepage": "https://github.com/MirzaHilmi/SIAMUB-Auth",
+            "keywords": [
+                "FILKOM",
+                "SIAM",
+                "auth",
+                "scraper"
+            ],
+            "support": {
+                "docs": "https://github.com/MirzaHilmi/SIAMUB-Auth/wiki",
+                "email": "exquisitemirza@gmail.com",
+                "issues": "https://github.com/MirzaHilmi/SIAMUB-Auth/issues",
+                "source": "https://github.com/MirzaHilmi/SIAMUB-Auth"
+            },
+            "time": "2023-08-06T05:59:41+00:00"
         },
         {
             "name": "monolog/monolog",

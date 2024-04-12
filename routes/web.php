@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     $pageTitle = "UB Mager";
@@ -8,35 +10,14 @@ Route::get('/', function () {
     return view('home', compact('pageTitle'));
 });
 
-Route::get('/orders/my', function() {
-    $pageTitle = 'My Orders';
-
-    $orders = [
-        [
-            "order_id" => 1,
-            'judul' => 'Joki Tugas Pemweb',
-            'destinasi' => 'Onlen',
-            'lokasi_jemput' => 'Onlen',
-            'detail' => 'Info joki projek akhir pemweb, framework wajib laravel dari dosen katanya',
-            'upah' => 10000,
-            'username' => 'Anak FILKOM',
-            'fakultas' => 'Fakultas Ilmu Komputer'
-        ],
-        [
-            "order_id" => 2,
-            'judul' => 'Antar ke Cafe',
-            'destinasi' => 'Nakoa',
-            'lokasi_jemput' => 'Suhat',
-            'detail' => 'Tolong anterin gw ke nakoa dari suhat, sekarang woi ppp',
-            'upah' => 5000,
-            'username' => 'Anak FEB',
-            'fakultas' => 'Fakultas Ekonomi Bisnis'
-        ],
-    ];
-
-    return view('orders/user', compact('pageTitle', 'orders'));
+Route::controller(OrderController::class)->group(function() {
+    Route::get('orders/my', 'index');
+    Route::get('orders/{order}', 'show');
 });
 
-Route::get('/orders/{id}', function($id) {
-    return view('orders/detail');
+Route::controller(AuthController::class)->group(function() {
+    Route::get('auth/customer/login', 'customerLoginView');
+    Route::get('auth/driver/login', 'driverLoginView');
+    Route::get('auth/driver/register', 'driverRegisterView');
 });
+
