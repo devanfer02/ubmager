@@ -3,17 +3,12 @@
 @section('content')
   <section class="container tw-flex tw-flex-row tw-justify-center tw-items-center tw-h-screen">
     <section class="tw-bg-cst-yellow tw-flex tw-flex-col md:tw-flex-row tw-p-10 lg:tw-p-20 tw-rounded-lg tw-border-4 tw-border-cst-black">
-      <section class="lg:tw-w-1/2 tw-w-full tw-mx-1 tw-flex tw-flex-row tw-justify-center tw-items-center">
-        <section class="tw-max-w-[300px]">
-          <h1 class="tw-text-3xl tw-text-cst-black tw-font-bold tw-mb-5">
+      <section class="lg:tw-w-1/2 tw-w-full tw-mx-1 tw-flex tw-flex-row tw-justify-center tw-items-center lg:tw-mr-10">
+        <section class="tw-max-w-[150px] lg:tw-max-w-[300px]">
+          <img src="{{ asset('assets/img/auth2.png') }}" alt="img">
+          <p class="tw-text-xl tw-text-cst-black tw-font-bold tw-mb-1 tw-text-center">
             Welcome to UB Mager App
-          </h1>
-          <h1 class="tw-text-xl tw-text-cst-black tw-font-bold tw-mb-1">
-            Ready to start your journey?
-          </h1>
-          <h1 class="tw-text-lg tw-text-cst-black tw-font-bold tw-mb-5">
-            Doesn't have account ? <a href="/auth/driver/register" class="tw-underline">Register</a>
-          </h1>
+          </p>
         </section>
       </section>
       <form class="lg:tw-w-1/2 tw-w-full tw-mx-1 lg:tw-mt-0 tw-mt-2">
@@ -22,12 +17,12 @@
         </div>
         <x-input name="NIM" placeHolder="Enter your NIM" type="text" id="nim"/>
         <x-input name="Password" placeHolder="Enter your Password" type="password" id="password"/>
-        <p class="tw-mb-2 tw-font-semibold ">
-          Use your SIAM account!
-        </p>
         <h1 class="tw-text-cst-black tw-font-semibold tw-mb-2">
-          Customer? <a href="/auth/customer/login" class="tw-underline">Login to your customer account</a>
+          Customer? <a href="/auth/customer/login" class="tw-underline">Login to your account</a>
         </h1>
+        <p class="tw-text-md tw-text-cst-black tw-font-semibold tw-mb-5">
+          Doesn't have account ? <a href="/auth/driver/register" class="tw-underline">Register</a>
+        </p>
         <div class="flex">
           <button type="submit" class="btn tw-bg-cst-blue tw-text-white tw-font-semibold tw-border tw-border-cst-blue">
             Login

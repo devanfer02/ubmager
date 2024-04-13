@@ -9,7 +9,7 @@
   @vite('resources/css/app.css')
   <title>{{ $pageTitle }}</title>
 </head>
-<body class="tw-h-screen">
+<body class="tw-h-screen">  
   <main class="tw-bg-cst-blue tw-h-screen">
     @yield('content')
   </main>

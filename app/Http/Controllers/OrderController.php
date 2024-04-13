@@ -35,6 +35,16 @@ class OrderController extends Controller
                 'username' => 'Anak FEB',
                 'fakultas' => 'Fakultas Ekonomi Bisnis'
             ],
+            [
+                "order_id" => 2,
+                'judul' => 'Antar ke Cafe',
+                'destinasi' => 'Nakoa',
+                'lokasi_jemput' => 'Suhat',
+                'detail' => 'Tolong anterin gw ke nakoa dari suhat, sekarang woi ppp',
+                'upah' => 5000,
+                'username' => 'Anak FEB',
+                'fakultas' => 'Fakultas Ekonomi Bisnis'
+            ],
         ];
 
         return view('orders/user', compact('pageTitle', 'orders'));
@@ -45,7 +55,9 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $pageTitle = 'Create Order';
+
+        return view('orders/create', compact('pageTitle'));
     }
 
     /**
@@ -53,7 +65,9 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate($this->rules());
+
+        // Order::create($data);
     }
 
     /**
@@ -86,5 +100,15 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+    private function rules() {
+        return [
+            'judul' => 'required|min:3|max:255',
+            'lokasi_jemput' => 'required',
+            'destinasi' => 'required',
+            'detail' => 'required|min:5|max:2000',
+            'upah' => 'required|numeric'
+        ];
     }
 }

@@ -15,13 +15,27 @@ class Input extends Component
     public $name;
     public $type;
     public $id;
+    public $value;
+    public $class;
+    public $errorMessage;
 
-    public function __construct(string $name, string $placeHolder,  string $id, string $type = "text")
+    public function __construct(
+        string $name,
+        string $placeHolder,
+        string $id,
+        string $type = "text",
+        string $value = "",
+        string $class = "",
+        string $errorMessage = "error"
+    )
     {
         $this->name = $name;
         $this->placeHolder = $placeHolder;
         $this->type = $type;
         $this->id = $id;
+        $this->value = $value;
+        $this->class = $class;
+        $this->errorMessage = $errorMessage;
     }
 
     /**

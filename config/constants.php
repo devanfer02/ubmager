@@ -7,16 +7,6 @@ return [
             'name' => 'Home'
         ]
     ],
-    'authNavs' => [
-        [
-            'path' => '/auth/login',
-            'name' => 'Login'
-        ],
-        [
-            'path' => '/auth/register',
-            'name' => 'Register'
-        ],
-    ],
     'userNavs' => [
         [
             'path' => '/orders/my',
@@ -27,7 +17,7 @@ return [
             'name' => 'Create Order'
         ],
         [
-            'path' => '/profile',
+            'path' => '/customer/profile',
             'name' => 'Profile'
         ]
     ],

@@ -6,8 +6,14 @@
   </label>
   <input
     type="{{ $type }}"
-    class="form-control shadow-none tw-border tw-border-cst-black"
+    class="form-control shadow-none tw-border tw-border-cst-black {{ $class }}"
     id="{{ $id }}" name="{{ $id }}"
+    value="{{ $value }}"
     required
   >
+  @error($id)
+  <div class="invalid-feedback">
+    {{ $message }}
+  </div>
+  @enderror
 </div>

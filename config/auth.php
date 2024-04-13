@@ -40,6 +40,15 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'mahasiswa' => [
+            'redirecTo' => '/orders/my',
+            'driver' => 'session',
+            'provider' => 'mahasiswa'
+        ],
+        'driver' => [
+            'driver' => 'session',
+            'provider' => 'driver'
+        ]
     ],
 
     /*
@@ -60,10 +69,16 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'mahasiswa' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
+            'model' => App\Models\Mahasiswa::class,
+            'column' => 'nim'
         ],
+        'driver' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Driver::class,
+            'column' => 'nim'
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

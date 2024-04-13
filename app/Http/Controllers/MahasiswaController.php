@@ -12,7 +12,8 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        $pageTitle = "Profile";
+        return view('customer/profile', compact('pageTitle'));
     }
 
     /**

@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('nama_lengkap', 250)->nullable(false);
             $table->string('nomor_wa', 150)->default('');
             $table->string('fakultas', 150)->nullable(false);
-            $table->string('program_studi', 200)->nullable(false);
+        $table->string('program_studi', 200)->nullable(false);
             $table->string('foto_profil', 250)->default('');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
