@@ -6,7 +6,7 @@
     <section class="wavyup lg:tw-h-[300px] tw-h-[100px] tw-bg-cover tw-w-full">
     </section>
     @include('home.about')
-    <section class="wavydown lg:tw-h-[300px] tw-h-[100px] tw-bg-cover tw-w-full">
+    <section class="wavydown lg:tw-h-[200px] tw-h-[100px] tw-bg-cover tw-w-full">
     </section>
     @include('home.role')
     @include('home.ticket')
