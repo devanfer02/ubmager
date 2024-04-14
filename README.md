@@ -10,20 +10,30 @@ UBMager web application is a project made for Web Programming and Technology Pra
 
 # 🔨 Development
 
-1. Clone this repository
-2. Run the following command
+1. Clone this repository with command
+```zsh
+git clone https://github.com/devanfer02/ubmager.git # https, just use this command if you use windows without wsl
+git clone git@github.com:devanfer02/ubmager.git # ssh
+```
+
+2. Install the required package
 ```zsh
 composer install
+npm install
+```
+
+3. Generate application key with command
+```zsh
 php artisan key:generate
 ```
 
-3. Run the application
+4. Run the application
 ```zsh
 php artisan serve
 ```
 
-4. Since this project use tailwind, don't forget to run the bellow command
-```
+5. Since this project use tailwind, don't forget to run the bellow command
+```zsh
 npm run dev
 ```
 
