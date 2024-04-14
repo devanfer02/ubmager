@@ -12,4 +12,10 @@ class PageController extends Controller
 
         return view('home', compact('pageTitle'));
     }
+
+    public function faq() {
+        $pageTitle = "FAQs";
+
+        return view('faq', compact('pageTitle'));
+    }
 }

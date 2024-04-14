@@ -6,8 +6,8 @@
       </a>
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="tw-text-white tw-font-semibold" href="#">FAQ</a></li>
-      <li class="ms-3"><a class="tw-text-white tw-font-semibold" href="#">Help</a></li>
+      <li class="ms-3"><a class="tw-text-white tw-font-semibold" href="/faq">FAQ</a></li>
+      <li class="ms-3"><a class="tw-text-white tw-font-semibold" href="/help">Help</a></li>
     </ul>
   </section>
 </footer>

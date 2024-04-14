@@ -6,7 +6,7 @@
 
 ## 🔎 About
 
-UBMager web application is a project made for Web Programming and Technology Practicum Class. Originally it's a 1 class project and each group will develop 1 feature which was already defined by 1 class, but i hate it 😤, because i know some nibbas wont fking work, so i made it by myself to show them its easy peasy af, you guys are just absolutely lazy like this webapp target users.
+UBMager web application is a project made for Web Programming and Technology Practicum Class. Originally it's a 1 class project and each group will develop 1 feature which was already defined by 1 class, but **i hate it** 😤, because i know some nibbas wont fking work, so i made it by myself to show them its easy peasy af, you guys are just absolutely lazy like this webapp target users.
 
 ## 🔨 Development
 

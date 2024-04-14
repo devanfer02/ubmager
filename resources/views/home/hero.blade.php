@@ -12,7 +12,7 @@
       <p class="tw-text-lg lg:tw-text-xl tw-font-semibold tw-text-cst-blue">Your solution for being such a lazy person</p>
       @auth('mahasiswa')
         <p class="tw-text-lg lg:tw-text-xl tw-font-semibold tw-text-cst-blue">
-          Welcome back, {{ Auth::guard('mahasiswa')->user()->nama_lengkap }}
+          Welcome back, {{ Auth::guard('mahasiswa')->user()->nama_panggilan }}
         </p>
       @endauth
       @auth('driver')
