@@ -4,11 +4,11 @@
     <h1>UB Mager 🥱💤 </h1>
 </div>
 
-# 🔎 About
+## 🔎 About
 
 UBMager web application is a project made for Web Programming and Technology Practicum Class. Originally it's a 1 class project and each group will develop 1 feature which was already defined by 1 class, but i hate it 😤, because i know some nibbas wont fking work, so i made it by myself to show them its easy peasy af, you guys just absolutely lazy like this webapp target users.
 
-# 🔨 Development
+## 🔨 Development
 
 1. Clone this repository with command
 ```zsh
@@ -37,9 +37,9 @@ php artisan serve
 npm run dev
 ```
 
-# 🚀 Production
+## 🚀 Production
 
 Soon
 
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 [![My Skills](https://skillicons.dev/icons?i=laravel,tailwind,bootstrap,javascript,php)](https://skillicons.dev)
