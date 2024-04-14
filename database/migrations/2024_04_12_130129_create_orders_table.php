@@ -20,6 +20,7 @@ return new class extends Migration
             $table->double('upah')->default(0);
             $table->string('photo')->default('');
             $table->longText('detail');
+            $table->boolean('on_proses')->default(false);
             $table->boolean('selesai')->default(false);
             $table->timestamps();
 

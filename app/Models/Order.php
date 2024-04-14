@@ -19,4 +19,24 @@ class Order extends Model
     {
         return $this->belongsTo(Mahasiswa::class, 'customer_id', 'nim');
     }
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function($query, $search) {
+            return $query->where('judul', 'like', "%" . $search . "%");
+        })->when($filters['customer'] ?? false, function($query, $customer) {
+            return $query->whereHas('mahasiswa', function($query) use($customer) {
+                $query->where('nama_panggilan', 'like', "%" . $customer . "%")->
+                orWhere('nama_lengkap', 'like', "%" . $customer . "%");
+            });
+        })->when($filters['lokasi'] ?? false, function($query, $lokasi) {
+            return $query->where('lokasi_jemput', 'like', "%" . $lokasi . "%");
+        })->when($filters['destinasi'] ?? false, function($query, $destinasi) {
+            return $query->where('lokasi_jemput', 'like', "%" . $destinasi . "%");
+        })->when($filters['minupah'] ?? false, function($query, $minupah) {
+            return $query->where('upah', '>=', $minupah);
+        })->when($filters['maxupah'] ?? false, function($query, $maxupah) {
+            return $query->where('upah', '<=', $maxupah);
+        });
+    }
 }

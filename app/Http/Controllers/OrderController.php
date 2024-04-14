@@ -14,21 +14,36 @@ class OrderController extends Controller
      */
     public function index()
     {
-
-        if (Auth::guard('mahasiswa')->check()) {
-            $pageTitle = 'My Orders';
-            $user = Auth::guard('mahasiswa')->user();
-
-            $orders = Order::with('mahasiswa')->whereHas('mahasiswa', function($q) use($user) {
-                $q->where('nim', '=', $user->nim);
-            })->get();
-
-        } else {
+        try {
             $pageTitle = 'Available Orders';
-            $orders = Order::with('mahasiswa')->get();
+            $orders = Order::latest()->with('mahasiswa');
+
+            if (Auth::guard('mahasiswa')->check()) {
+                $pageTitle = 'My Orders';
+
+                $user = Auth::guard('mahasiswa')->user();
+
+                $orders->whereHas('mahasiswa', function($q) use($user) {
+                    $q->where('nim', '=', $user->nim);
+                });
+            }
+
+            $orders = $orders->filter(request(
+                ['search', 'customer', 'lokasi',
+                'minupah', 'maxupah', 'judul',
+                'destinasi']
+            ));
+
+            $orders = $orders->get();
+
+            return view('orders/list', compact('pageTitle', 'orders'));
+        } catch(\Exception $e) {
+            error_log("Error: " . $e->getMessage());
+
+            $pageTitle = 'Orders List';
+            return view('orders/list', compact('pageTitle'));
         }
 
-        return view('orders/list', compact('pageTitle', 'orders'));
     }
 
     /**
@@ -95,7 +110,7 @@ class OrderController extends Controller
             if($order->selesai) {
                 return redirect('orders/my')->with('failure', "Can't edit completed order");
             }
-            
+
             $data = $request->validate($this->rules());
             $order->fill($data)->save();
 

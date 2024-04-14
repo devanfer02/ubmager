@@ -1,4 +1,4 @@
-<div class="mb-3">
+<div class="mb-3 tw-w-full">
   <label
     for="{{ $id }}"
     class="form-label tw-text-cst-black tw-font-semibold">
@@ -11,6 +11,7 @@
     value="{{ $value }}"
     placeholder="{{ $placeHolder }}"
     @if($required) required @endif
+    @if(!$autoComplete) autocomplete="off" @endif
   >
   @error($id)
   <div class="invalid-feedback">
