@@ -18,6 +18,7 @@ class Input extends Component
     public $value;
     public $class;
     public $errorMessage;
+    public $required;
 
     public function __construct(
         string $name,
@@ -26,7 +27,8 @@ class Input extends Component
         string $type = "text",
         string $value = "",
         string $class = "",
-        string $errorMessage = "error"
+        string $errorMessage = "error",
+        bool $required = false
     )
     {
         $this->name = $name;
@@ -36,6 +38,7 @@ class Input extends Component
         $this->value = $value;
         $this->class = $class;
         $this->errorMessage = $errorMessage;
+        $this->required = $required;
     }
 
     /**

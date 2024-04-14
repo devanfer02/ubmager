@@ -71,17 +71,23 @@
       id="auth-nav"
       >
         <a class="tw-mr-8 tw-flex tw-group" href="{{ route('customer.profile') }}">
-          <p class="tw-text-white tw-font-semibold tw-mt-1 tw-mx-2 group-hover:tw-text-cst-yellow tw-hidden lg:tw-inline">
+          <p class=" tw-font-semibold tw-mt-1 tw-mx-2
+          group-hover:tw-text-cst-yellow tw-hidden lg:tw-inline
+            tw-duration-200 tw-ease-in-out
+            {{ isActive(["customer/profile"]) ? 'tw-text-cst-yellow' : 'tw-text-white' }}">
             {{ $name }}
           </p>
           <iconify-icon
             icon="iconamoon:profile-circle-fill"
-            class="tw-text-white group-hover:tw-text-cst-yellow"
+            class="{{ isActive(["customer/profile"]) ? 'tw-text-cst-yellow' : 'tw-text-white' }}
+             group-hover:tw-text-cst-yellow"
             width="36"
             height="36"
             >
           </iconify-icon>
-          <p class="tw-text-white tw-font-semibold tw-mt-1 tw-ml-6 group-hover:tw-text-cst-yellow lg:tw-hidden">
+          <p class="tw-text-white tw-font-semibold tw-mt-1 tw-ml-6 group-hover:tw-text-cst-yellow
+          lg:tw-hidden tw-duration-200 tw-ease-in-out
+          {{ isActive(["customer/profile"]) ? 'tw-text-cst-yellow' : 'tw-text-white' }}">
             {{ $name }}
           </p>
         </a>

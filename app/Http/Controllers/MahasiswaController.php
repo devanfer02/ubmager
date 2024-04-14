@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MahasiswaController extends Controller
 {
@@ -12,8 +13,11 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $pageTitle = "Profile";
-        return view('customer/profile', compact('pageTitle'));
+        $pageTitle = "Your Profile";
+
+        $mahasiswa = Auth::guard('mahasiswa')->user();
+
+        return view('customer/profile', compact('mahasiswa', 'pageTitle'));
     }
 
     /**
@@ -37,7 +41,9 @@ class MahasiswaController extends Controller
      */
     public function show(Mahasiswa $mahasiswa)
     {
-        //
+        $pageTitle = $mahasiswa->nama_panggilan . "Profile";
+
+        return view('customer/profile', compact('mahasiswa', 'pageTitle'));
     }
 
     /**

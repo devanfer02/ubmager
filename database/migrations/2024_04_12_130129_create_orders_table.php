@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('lokasi_jemput', 250)->nullable(false);
             $table->string('destinasi', 250)->nullable(false);
             $table->double('upah')->default(0);
+            $table->string('photo')->default('');
             $table->longText('detail');
             $table->boolean('selesai')->default(false);
             $table->timestamps();

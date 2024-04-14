@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use SIAMUBAuth\Models\Mahasiswa as MirzaPunya;
 
 class Mahasiswa extends Model
 {
+    use HasFactory;
     protected $primaryKey = 'nim';
+    protected $keyType = 'string';
     protected $guarded = [
         'created_at',
         'updated_at'
@@ -16,6 +19,10 @@ class Mahasiswa extends Model
     protected $hidden = [
         'remember_token'
     ];
+
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
 
     public function populate(MirzaPunya $mhs) {
         $this->nim = $mhs->nim;

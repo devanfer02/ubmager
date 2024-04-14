@@ -15,41 +15,53 @@
         name="Judul"
         id="judul"
         placeHolder="Judul Layanan"
-        class="@error('judul') is-invalid @enderror"
+        class="i"
         value="{{ old('judul') }}"
+        required
       />
       <x-input
         type="text"
-        name="Upah"
+        name="Upah (Rupiah)"
         id="upah"
         placeHolder="10000"
-        class="@error('upah') is-invalid @enderror"
+        class=""
         value="{{ old('upah') }}"
+        required
       />
       <x-input
         type="text"
         name="Lokasi Jemput"
         id="lokasi_jemput"
         placeHolder="Lokasi Jemput"
-        class="@error('lokasi_jemput') is-invalid @enderror"
+        class="emput') i"
         value="{{ old('lokasi_jemput') }}"
+        required
       />
       <x-input
         type="text"
         name="Destinasi"
         id="destinasi"
         placeHolder="Destinasi"
-        class="@error('destinasi') is-invalid @enderror"
+        class="i') i"
         value="{{ old('destinasi') }}"
+        required
+      />
+      <x-input
+        type="file"
+        name="Foto"
+        id="foto"
+        placeHolder=""
+        class=""
+        value="{{ old('foto') }}"
       />
       <div class="mb-3">
-        <label for="detail" class="form-label tw-text-cst-black tw-font-semibold">Detail</label>
+        <label for="detail" class="form-label tw-text-cst-black tw-font-semibold">Detail  <span class="tw-text-red-600"> *</span></label>
         <textarea
           name="detail"
           id="detail"
           cols="30"
           rows="8"
-          class="form-control shadow-none tw-border tw-border-cst-black @error('detail') is-invalid @enderror" style="resize:none;"></textarea>
+          class="form-control shadow-none tw-border tw-border-cst-black" style="resize:none;"></textarea>
         @error('detail')
           <div class="invalid-feedback">
               {{ $message }}

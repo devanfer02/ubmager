@@ -17,6 +17,6 @@ class Order extends Model
 
     public function mahasiswa(): BelongsTo
     {
-        return $this->belongsTo(Mahasiswa::class);
+        return $this->belongsTo(Mahasiswa::class, 'customer_id', 'nim');
     }
 }

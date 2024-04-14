@@ -19,8 +19,8 @@
         <h1 class="tw-font-semibold tw-text-cst-black tw-text-2xl">Login</h1>
         <div class="tw-text-cst-black tw-bg-cst-black tw-h-[2px] tw-mb-5">
         </div>
-        <x-input name="NIM" placeHolder="Enter your NIM" type="text" id="nim"/>
-        <x-input name="Password" placeHolder="Enter your Password" type="password" id="password"/>
+        <x-input name="NIM" placeHolder="Enter your NIM" type="text" id="nim" required/>
+        <x-input name="Password" placeHolder="Enter your Password" type="password" id="password" required/>
         <section class="">
           <p class="tw-font-semibold tw-mb-1">
             Use your SIAM account!

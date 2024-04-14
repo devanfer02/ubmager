@@ -3,7 +3,8 @@
     <section class="lg:tw-w-1/2 tw-w-full tw-flex lg:tw-p-10 tw-justify-center md:tw-justify-start">
       <section
         class="lg:tw-px-0 tw-px-3 tw-border-2 tw-border-cst-blue tw-py-5 tw-rounded-lg
-        hover:tw-bg-cst-blue tw-group tw-duration-200 tw-ease-in-out tw-my-3"
+        hover:tw-bg-cst-blue tw-group tw-duration-200 tw-ease-in-out tw-my-3
+        hover:tw-border-cst-yellow"
       >
         <section class="tw-flex tw-justify-center">
           <img
@@ -23,7 +24,8 @@
     <section class="lg:tw-w-1/2 tw-w-full lg:tw-p-10 lg:tw-mt-0 tw-flex tw-justify-center md:tw-justify-start">
       <section
         class="lg:tw-px-0 tw-px-3 tw-border-2 tw-border-cst-blue tw-py-5 tw-rounded-lg
-        hover:tw-bg-cst-blue tw-group tw-duration-200 tw-ease-in-out tw-my-3"
+        hover:tw-bg-cst-blue tw-group tw-duration-200 tw-ease-in-out tw-my-3
+        hover:tw-border-cst-yellow"
       >
         <section class="tw-flex tw-justify-center">
           <img
