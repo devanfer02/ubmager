@@ -1,16 +1,13 @@
-<div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+<footer class="footer">
+  <section class="d-flex flex-wrap justify-content-between align-items-center tw-px-5 lg:tw-px-16 py-3 tw-mt-5 border-top tw-bg-cst-blue tw-rounded-t-lg">
     <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <a href="/" class=" me-2 mb-md-0  text-decoration-none lh-1 tw-text-cst-yellow tw-font-semibold">
+        &copy; 2024 UB Mager
       </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2023 Company, Inc</span>
     </div>
-
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+      <li class="ms-3"><a class="tw-text-white tw-font-semibold" href="#">FAQ</a></li>
+      <li class="ms-3"><a class="tw-text-white tw-font-semibold" href="#">Help</a></li>
     </ul>
-  </footer>
-</div>
+  </section>
+</footer>

@@ -20,6 +20,7 @@ class Mahasiswa extends Model
     public function populate(MirzaPunya $mhs) {
         $this->nim = $mhs->nim;
         $this->nama_lengkap = $mhs->nama;
+        $this->nama_panggilan = $mhs->nama;
         $this->fakultas = $mhs->fakultas;
         $this->program_studi = $mhs->programStudi;
         $this->foto_profil = $mhs->pasFoto;

@@ -3,8 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+    html, body {
+        height: 100%;
+    }
+
     #collapse {
         position: absolute;
         z-index: 1;
+    }
+
+    .wavyup {
+        background-image:url('/public/assets/img/waveup.svg');
+        background-repeat: no-repeat;
+    }
+
+    .wavydown {
+        background-image:url('/public/assets/img/wavedown.svg');
+        background-repeat: no-repeat;
+    }
+
+    iconify-icon {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
     }
 }

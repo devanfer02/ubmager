@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Ramsey\Uuid\Uuid;
 
 class OrderController extends Controller
 {
@@ -12,42 +14,21 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $pageTitle = 'My Orders';
 
-        $orders = [
-            [
-                "order_id" => 1,
-                'judul' => 'Joki Tugas Pemweb',
-                'destinasi' => 'Onlen',
-                'lokasi_jemput' => 'Onlen',
-                'detail' => 'Info joki projek akhir pemweb, framework wajib laravel dari dosen katanya',
-                'upah' => 10000,
-                'username' => 'Anak FILKOM',
-                'fakultas' => 'Fakultas Ilmu Komputer'
-            ],
-            [
-                "order_id" => 2,
-                'judul' => 'Antar ke Cafe',
-                'destinasi' => 'Nakoa',
-                'lokasi_jemput' => 'Suhat',
-                'detail' => 'Tolong anterin gw ke nakoa dari suhat, sekarang woi ppp',
-                'upah' => 5000,
-                'username' => 'Anak FEB',
-                'fakultas' => 'Fakultas Ekonomi Bisnis'
-            ],
-            [
-                "order_id" => 2,
-                'judul' => 'Antar ke Cafe',
-                'destinasi' => 'Nakoa',
-                'lokasi_jemput' => 'Suhat',
-                'detail' => 'Tolong anterin gw ke nakoa dari suhat, sekarang woi ppp',
-                'upah' => 5000,
-                'username' => 'Anak FEB',
-                'fakultas' => 'Fakultas Ekonomi Bisnis'
-            ],
-        ];
+        if (Auth::guard('mahasiswa')) {
+            $pageTitle = 'My Orders';
+            $user = Auth::guard('mahasiswa')->user();
 
-        return view('orders/user', compact('pageTitle', 'orders'));
+            $orders = Order::with(['mahasiswa' => function($query) use($user) {
+                $query->where('nim', '=', $user->nim);
+            }])->get();
+
+        } else {
+            $orders = Order::with('mahasiswa')->get();
+            $pageTitle = 'Available Orders';
+        }
+
+        return view('orders/list', compact('pageTitle', 'orders'));
     }
 
     /**
@@ -65,9 +46,21 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate($this->rules());
+        try {
+            $data = $request->validate($this->rules());
 
-        // Order::create($data);
+            $user = Auth::guard('mahasiswa')->user();
+
+            $data = [...$data, 'customer_id' => $user->nim, 'order_id' => Uuid::uuid4()];
+
+            Order::create($data);
+
+            return redirect('orders/my')->with('success');
+
+        } catch(\Exception $e) {
+            error_log("Error: " . $e->getMessage());
+            return redirect('orders/my')->with('failure', 'Failed to add order');
+        }
     }
 
     /**
@@ -75,7 +68,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $pageTitle = $order->judul;
+        return view('orders/detail', compact('order', 'pageTitle'));
     }
 
     /**
@@ -83,7 +77,8 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        //
+        $pageTitle = "Edit " . $order->judul;
+        return view('orders/edit', compact('order', 'pageTitle'));
     }
 
     /**

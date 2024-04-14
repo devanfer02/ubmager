@@ -5,6 +5,7 @@
     <x-button
       class="tw-text-sky-700 tw-border-sky-700 tw-w-32 lg:tw-w-28 tw-text-center hover:tw-bg-sky-700 hover:tw-text-white
       tw-duration-300 tw-ease-in-out"
+      action="{{ route('orders.create') }}"
       text="Add Order"
     />
     <input

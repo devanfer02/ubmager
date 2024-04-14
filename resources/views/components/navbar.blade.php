@@ -43,41 +43,58 @@
       @php
         $isAuth = false;
         $role = "";
-        if (Auth::guard('mahasiswa')->user()) {
+        $name = "";
+        if (Auth::guard('mahasiswa')->check()) {
           $isAuth = true;
           $role = "customer";
+          $name = Auth::guard('mahasiswa')->user()->nama_lengkap;
         }
-        if (Auth::guard('driver')->user()) {
+        if (Auth::guard('driver')->check()) {
           $isAuth = true;
           $role = "driver";
+          $name = Auth::guard('driver')->user()->nama_lengkap;
         }
       @endphp
-
       @if(!$isAuth)
       <div class="tw-flex tw-justify-start lg:tw-justify-end tw-ml-1.5 lg:tw-mt-0 tw-mt-2" id="auth-nav">
         <x-button
           text="Login"
           action="/auth/customer/login"
-          class="tw-text-cst-blue tw-bg-cst-yellow tw-border tw-border-cst-yellow
+          class="tw-rounded-lg py-1 px-2 tw-mx-1 tw-text-cst-blue tw-bg-cst-yellow tw-border tw-border-cst-yellow
           tw-font-bold tw-text-md tw-mr-5 hover:tw-text-cst-yellow hover:tw-bg-cst-blue tw-duration-200 tw-ease-in-out
           "
         />
       </div>
       @else
-      <form
-        class="tw-flex tw-justify-start lg:tw-justify-end tw-ml-1.5 lg:tw-mt-0 tw-mt-2"
-        id="auth-nav"
-        method="post"
-        action="{{ route('customer.logout') }}">
-        @csrf 
-        <button
-          class="tw-rounded-lg py-1 px-2 tw-mx-1 tw-text-cst-blue tw-bg-cst-yellow tw-border tw-border-cst-yellow
-          tw-font-bold tw-text-md tw-mr-5 hover:tw-text-cst-yellow hover:tw-bg-cst-blue tw-duration-200 tw-ease-in-out"
-          type="submit"
-        >
-        Logout
-        </button>
-      </form>
+      <section
+      class="tw-flex tw-justify-start lg:tw-justify-end tw-ml-1.5 lg:tw-mt-0 tw-mt-2"
+      id="auth-nav"
+      >
+        <a class="tw-mr-8 tw-flex tw-group" href="{{ route('customer.profile') }}">
+          <p class="tw-text-white tw-font-semibold tw-mt-1 tw-mx-2 group-hover:tw-text-cst-yellow">
+            {{ $name }}
+          </p>
+          <iconify-icon
+            icon="iconamoon:profile-circle-fill"
+            class="tw-text-white group-hover:tw-text-cst-yellow"
+            width="36"
+            height="36"
+            >
+          </iconify-icon>
+        </a>
+        <form
+          method="post"
+          action="{{ route("$role.logout") }}">
+          @csrf
+          <button
+            class="tw-rounded-lg py-1 px-2 tw-mx-1 tw-text-cst-blue tw-bg-cst-yellow tw-border tw-border-cst-yellow
+            tw-font-bold tw-text-md tw-mr-5 hover:tw-text-cst-yellow hover:tw-bg-cst-blue tw-duration-200 tw-ease-in-out"
+            type="submit"
+            >
+            Logout
+          </button>
+        </form>
+      </section>
       @endif
     </div>
   </div>

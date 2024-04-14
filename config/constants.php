@@ -15,10 +15,6 @@ return [
         [
             'path' => '/orders/create',
             'name' => 'Create Order'
-        ],
-        [
-            'path' => '/customer/profile',
-            'name' => 'Profile'
         ]
     ],
     'driverNavs' => [
