@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg tw-bg-cst-blue fixed-top">
+<nav class="navbar navbar-expand-lg tw-bg-cst-blue fixed-top tw-duration-200 tw-ease-in" id="navbar">
   <div class="container-fluid tw-py-2 lg:tw-px-16">
     <a
       class="tw-text-cst-blue tw-bg-cst-yellow tw-px-2 tw-pb-1
@@ -67,7 +67,7 @@
       </div>
       @else
       <section
-      class="tw-flex tw-justify-start lg:tw-justify-end tw-ml-1.5 lg:tw-mt-0 tw-mt-2"
+      class="lg:tw-flex tw-justify-start lg:tw-justify-end tw-ml-1.5 lg:tw-mt-0 tw-mt-2"
       id="auth-nav"
       >
         <a class="tw-mr-8 tw-flex tw-group" href="{{ route('customer.profile') }}">
