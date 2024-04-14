@@ -71,7 +71,7 @@
       id="auth-nav"
       >
         <a class="tw-mr-8 tw-flex tw-group" href="{{ route('customer.profile') }}">
-          <p class="tw-text-white tw-font-semibold tw-mt-1 tw-mx-2 group-hover:tw-text-cst-yellow">
+          <p class="tw-text-white tw-font-semibold tw-mt-1 tw-mx-2 group-hover:tw-text-cst-yellow tw-hidden lg:tw-inline">
             {{ $name }}
           </p>
           <iconify-icon
@@ -81,8 +81,12 @@
             height="36"
             >
           </iconify-icon>
+          <p class="tw-text-white tw-font-semibold tw-mt-1 tw-ml-6 group-hover:tw-text-cst-yellow lg:tw-hidden">
+            {{ $name }}
+          </p>
         </a>
         <form
+          class="tw-mt-3 lg:tw-mt-0"
           method="post"
           action="{{ route("$role.logout") }}">
           @csrf
