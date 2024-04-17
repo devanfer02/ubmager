@@ -22,6 +22,11 @@
         background-repeat: no-repeat;
     }
 
+    .footerwave {
+        background-image:url('/public/assets/img/footerwave.svg');
+        background-repeat: no-repeat;
+    }
+
     iconify-icon {
         display: inline-block;
         width: 1em;

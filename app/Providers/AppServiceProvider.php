@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,7 +24,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         RateLimiter::for('global', function(Request $request) {
-            return Limit::perMinute(1000)->by($request->ip());
+            return Limit::perMinute(500)->by($request->ip());
         });
+
+        Paginator::useBootstrapFive();
     }
 }

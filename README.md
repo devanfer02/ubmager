@@ -42,4 +42,4 @@ npm run dev
 Soon
 
 ## 🛠️ Tech Stack
-[![My Skills](https://skillicons.dev/icons?i=laravel,tailwind,bootstrap,javascript,php)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=laravel,firebase,tailwind,bootstrap,javascript,php)](https://skillicons.dev)

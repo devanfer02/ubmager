@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.2",
         "khatabwedaa/blade-css-icons": "^1.4",
+        "kreait/laravel-firebase": "*",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.5",

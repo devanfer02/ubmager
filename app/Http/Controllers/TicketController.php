@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mahasiswa;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class MahasiswaController extends Controller
+class TicketController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $pageTitle = "Your Profile";
-
-        $mahasiswa = Auth::guard('mahasiswa')->user();
-
-        return view('customer/profile', compact('mahasiswa', 'pageTitle'));
+        //
     }
 
     /**
@@ -39,17 +34,15 @@ class MahasiswaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Mahasiswa $mahasiswa)
+    public function show(Ticket $ticket)
     {
-        $pageTitle = $mahasiswa->nama_panggilan . " Profile";
-
-        return view('customer/profile', compact('mahasiswa', 'pageTitle'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Mahasiswa $mahasiswa)
+    public function edit(Ticket $ticket)
     {
         //
     }
@@ -57,7 +50,7 @@ class MahasiswaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mahasiswa $mahasiswa)
+    public function update(Request $request, Ticket $ticket)
     {
         //
     }
@@ -65,7 +58,7 @@ class MahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Mahasiswa $mahasiswa)
+    public function destroy(Ticket $ticket)
     {
         //
     }

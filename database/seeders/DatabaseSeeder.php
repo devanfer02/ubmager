@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
 
         Mahasiswa::factory(10)->create();
 
-        Order::factory(20)->create();
+        Order::factory(100)->create();
     }
 }

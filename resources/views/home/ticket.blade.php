@@ -16,7 +16,7 @@
         <x-button
           text="Create Ticket"
           action=""
-          class="tw-border-cst-blue tw-bg-cst-yellow tw-text-xl tw-font-semibold tw-pb-1.5 tw-pt-1 tw-px-2
+          class="tw-border-cst-blue tw-bg-cst-yellow tw-text-xl tw-font-semibold tw-pb-1.5 tw-pt-1
           hover:tw-bg-cst-blue hover:tw-text-cst-yellow tw-duration-300 tw-ease-in-out"
           />
       </section>

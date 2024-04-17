@@ -12,7 +12,10 @@
           Welcome to UB Mager, a community-driven platform dedicated to
           providing assistance and support to students and members of Universitas Brawijaya.
           "Mager," short for "Malas Gerak," embodies the spirit of collaboration and mutual aid
-          among individuals within the university community. Whether you need help with errands,
+          among individuals within the university community.
+        </p>
+        <p class="tw-text-white tw-max-w-[45rem] lg:tw-text-xl tw-text-md tw-mt-3">
+          Whether you need help with errands,
           assignments, or simply seek companionship on campus, UB Mager is here to connect you with fellow students willing to lend a hand.
           Join us in fostering a culture of helpfulness and camaraderie at Universitas Brawijaya.
         </p>

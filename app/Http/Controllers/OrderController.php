@@ -34,7 +34,7 @@ class OrderController extends Controller
                 'destinasi']
             ));
 
-            $orders = $orders->get();
+            $orders = $orders->paginate(12);
 
             return view('orders/list', compact('pageTitle', 'orders'));
         } catch(\Exception $e) {

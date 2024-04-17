@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-lg-0 ">
         @foreach (config('constants.navs') as $nav)
-          <li class="nav-item lg:tw-my-0 tw-my-1">
+          <li class="nav-item lg:tw-my-0 tw-my-1.5">
             <a
               class="{{ isActive([$nav['path']]) ? "tw-text-cst-yellow" : "tw-text-white hover:tw-text-gray-400 tw-duration-300 tw-ease-in-out" }}
               tw-mx-3 tw-font-semibold tw-text-lg tw-pt-5 "
@@ -27,7 +27,7 @@
         @endforeach
         @auth('mahasiswa')
           @foreach (config('constants.userNavs') as $nav)
-            <li class="nav-item lg:tw-my-0 tw-my-1">
+            <li class="nav-item lg:tw-my-0 tw-my-1.5">
               <a
               class="{{ isActive([$nav['path']]) ? "tw-text-cst-yellow" : "tw-text-white hover:tw-text-gray-400 tw-duration-300 tw-ease-in-out" }}
                 tw-mx-3 tw-font-semibold tw-text-lg tw-pt-5 "
@@ -92,7 +92,7 @@
           </p>
         </a>
         <form
-          class="tw-mt-3 lg:tw-mt-0"
+          class="tw-mt-5 tw-pb-2 lg:tw-pb-0 lg:tw-mt-0"
           method="post"
           action="{{ route("$role.logout") }}">
           @csrf

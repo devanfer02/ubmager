@@ -1,13 +1,13 @@
 @extends('layout/layout')
 
 @section('content')
-  <section class="tw-flex">
-    <x-button
-      class="tw-text-sky-700 tw-border-sky-700 tw-w-32 lg:tw-w-28 tw-text-center hover:tw-bg-sky-700 hover:tw-text-white
-      tw-duration-300 tw-ease-in-out"
-      action="{{ route('orders.create') }}"
-      text="Add Order"
-    />
+<section class="tw-flex">
+  <x-button
+  class="tw-text-sky-700 tw-border-sky-700 tw-w-32 lg:tw-w-28 tw-text-center hover:tw-bg-sky-700 hover:tw-text-white
+  tw-duration-300 tw-ease-in-out"
+  action="{{ route('orders.create') }}"
+  text="Add Order"
+  />
     <form action="{{ route(Route::currentRouteName()) }}" class="tw-flex tw-w-full">
       <input
         type="text"
@@ -51,6 +51,9 @@
       @foreach ($orders as $order)
         <x-order-card :order="$order"/>
       @endforeach
+      <div class="tw-flex tw-justify-center tw-w-ful">
+        {{ $orders->links() }}
+      </div>
     </section>
     @endif
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
