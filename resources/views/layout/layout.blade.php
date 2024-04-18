@@ -9,6 +9,7 @@
   <script src="https://code.iconify.design/iconify-icon/2.0.0/iconify-icon.min.js"></script>
   @vite('resources/css/app.css')
   @vite('resources/js/app.js')
+  @livewireStyles
   <title>{{ $pageTitle }}</title>
 </head>
 <body class="">
@@ -19,5 +20,6 @@
     @yield('content')
   </main>
   @include('components/footer')
+  @livewireScripts
 </body>
 </html>

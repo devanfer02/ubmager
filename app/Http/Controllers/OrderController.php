@@ -12,11 +12,12 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         try {
+
             $pageTitle = 'Available Orders';
-            $orders = Order::latest()->with('mahasiswa');
+            $orders = Order::latest()->with('mahasiswa')->orderBy('created_at');
 
             if (Auth::guard('mahasiswa')->check()) {
                 $pageTitle = 'My Orders';
@@ -31,7 +32,7 @@ class OrderController extends Controller
             $orders = $orders->filter(request(
                 ['search', 'customer', 'lokasi',
                 'minupah', 'maxupah', 'judul',
-                'destinasi']
+                'destinasi', 'selesai']
             ));
 
             $orders = $orders->paginate(12);

@@ -21,7 +21,7 @@ class Mahasiswa extends Model
     ];
 
     public function orders() {
-        return $this->hasMany(Order::class);
+        return $this->hasMany(Order::class, 'customer_id', 'nim');
     }
 
     public function populate(MirzaPunya $mhs) {

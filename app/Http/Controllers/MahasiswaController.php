@@ -15,9 +15,14 @@ class MahasiswaController extends Controller
     {
         $pageTitle = "Your Profile";
 
-        $mahasiswa = Auth::guard('mahasiswa')->user();
+        $mahasiswa = Auth::guard('mahasiswa')->user()->load('orders');
 
-        return view('customer/profile', compact('mahasiswa', 'pageTitle'));
+        $orders = $mahasiswa['orders'];
+
+        $availableOrders = $orders->where('selesai', false);
+        $completedOrders = $orders->where('selesai', true);
+
+        return view('customer/profile', compact('mahasiswa', 'pageTitle', 'availableOrders', 'completedOrders'));
     }
 
     /**
@@ -43,7 +48,14 @@ class MahasiswaController extends Controller
     {
         $pageTitle = $mahasiswa->nama_panggilan . " Profile";
 
-        return view('customer/profile', compact('mahasiswa', 'pageTitle'));
+        $mahasiswa = $mahasiswa->load('orders');
+
+        $orders = $mahasiswa['orders'];
+
+        $availableOrders = $orders->where('selesai', false);
+        $completedOrders = $orders->where('selesai', true);
+
+        return view('customer/profile', compact('mahasiswa', 'pageTitle', 'availableOrders', 'completedOrders'));
     }
 
     /**
@@ -51,7 +63,9 @@ class MahasiswaController extends Controller
      */
     public function edit(Mahasiswa $mahasiswa)
     {
-        //
+        $pageTitle = 'Edit Profile';
+
+        return view('customer/edit', compact('mahasiswa', 'pageTitle'));
     }
 
     /**

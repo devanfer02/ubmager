@@ -8,7 +8,7 @@
     >
       UB Mager
     </a>
-    <button class="navbar-toggler tw-text-cst-yellow tw-border-cst-yellow" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler tw-border-0 tw-text-cst-yellow tw-border-cst-yellow" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <iconify-icon icon="charm:menu-hamburger" class="tw-text-cst-yellow"></iconify-icon>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

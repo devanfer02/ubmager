@@ -6,7 +6,7 @@
           class="lg:tw-px-0 tw-px-3 tw-border-2 tw-border-cst-blue tw-py-5 tw-rounded-lg
           hover:tw-bg-cst-blue tw-group tw-duration-200 tw-ease-in-out tw-my-3
           hover:tw-border-cst-yellow tw-cursor-pointer"
-          onclick="location.href = '{{ Auth::guard('mahasiswa')->check() ? '/orders/my' : '/auth/customer/login' }}'"
+          onclick="location.href = '{{ Auth::guard('mahasiswa')->check() ? '/orders/my?selesai=false' : '/auth/customer/login' }}'"
 
         >
           <section class="tw-flex tw-justify-center">
@@ -31,7 +31,7 @@
           class="lg:tw-px-0 tw-px-3 tw-border-2 tw-border-cst-blue tw-py-5 tw-rounded-lg
           hover:tw-bg-cst-blue tw-group tw-duration-200 tw-ease-in-out tw-my-3
           hover:tw-border-cst-yellow tw-cursor-pointer"
-          onclick="location.href = '{{ Auth::guard('mahasiswa')->check() ? '/orders/list' : '/auth/driver/login' }}'"
+          onclick="location.href = '{{ Auth::guard('mahasiswa')->check() ? '/orders/list?selesai=false' : '/auth/driver/login' }}'"
         >
           <section class="tw-flex tw-justify-center">
             <img

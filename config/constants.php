@@ -9,7 +9,7 @@ return [
     ],
     'userNavs' => [
         [
-            'path' => '/orders/my',
+            'path' => '/orders/my?selesai=false',
             'name' => 'My Orders'
         ],
         [

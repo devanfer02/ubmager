@@ -49,5 +49,6 @@ Route::prefix('auth/')->controller(AuthController::class)->group(function() {
 Route::prefix('customer/')->controller(MahasiswaController::class)->group(function() {
     Route::get('profile', 'index')->name('customer.profile')->middleware('ubauth:mahasiswa');
     Route::get('profile/{mahasiswa}', 'show')->name('customer.profile.guest');
+    Route::get('profile/edit/{mahasiswa}', 'edit')->name('customer.edit')->middleware('ubauth:mahasiswa');
 });
 

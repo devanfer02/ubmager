@@ -4,20 +4,23 @@
   <section class="card container tw-border-cst-blue tw-border-2 @if(!$order['selesai'])tw-bg-cst-yellow @endif">
     <section class="tw-p-10">
       <div class="tw-flex">
-        <a href="{{ route('customer.profile.guest', $order['mahasiswa']) }}">
+        <a
+          href="{{ route('customer.profile.guest', $order['mahasiswa']) }}"
+          class="tw-group"
+          >
           <div class="tw-flex tw-mb-5">
             @if($order['mahasiswa']['foto_profil'])
               <img src="{{ $order['mahasiswa']['foto_profil'] }}" alt="">
             @else
-              <iconify-icon icon="gg:profile" width="40" height="40" class="tw-text-cst-black"></iconify-icon>
+              <iconify-icon icon="gg:profile" width="40" height="40" class="tw-text-cst-black {{ $order['selesai'] ? 'group-hover:tw-text-cst-yellow' : 'group-hover:tw-text-white' }}"></iconify-icon>
             @endif
-            <h1 class="tw-text-cst-black tw-text-3xl font-semibold tw-ml-10">
+            <h1 class="tw-text-cst-black tw-text-3xl font-semibold tw-ml-10 {{ $order['selesai'] ? 'group-hover:tw-text-cst-yellow' : 'group-hover:tw-text-white' }}">
               {{ $order['mahasiswa']["nama_panggilan"] }}
             </h1>
           </div>
         </a>
         <div class="tw-ml-auto tw-mr-6 lg:tw-mr-10">
-          <a href="{{ route('orders.my') }}"><iconify-icon icon="lets-icons:back" width="40" height="40" class="tw-text-cst-black"></iconify-icon></a>
+          <a href="{{ route('orders.my') }}"><iconify-icon icon="lets-icons:back" width="40" height="40" class="tw-text-cst-black  {{ $order['selesai'] ? 'hover:tw-text-cst-yellow' : 'hover:tw-text-white'}}"></iconify-icon></a>
         </div>
       </div>
       <div class="tw-mb-2">

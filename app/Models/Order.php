@@ -22,6 +22,7 @@ class Order extends Model
 
     public function scopeFilter($query, array $filters)
     {
+
         $query->when($filters['search'] ?? false, function($query, $search) {
             return $query->where('judul', 'like', "%" . $search . "%");
         })->when($filters['customer'] ?? false, function($query, $customer) {
@@ -32,11 +33,20 @@ class Order extends Model
         })->when($filters['lokasi'] ?? false, function($query, $lokasi) {
             return $query->where('lokasi_jemput', 'like', "%" . $lokasi . "%");
         })->when($filters['destinasi'] ?? false, function($query, $destinasi) {
-            return $query->where('lokasi_jemput', 'like', "%" . $destinasi . "%");
+            return $query->where('destinasi', 'like', "%" . $destinasi . "%");
         })->when($filters['minupah'] ?? false, function($query, $minupah) {
             return $query->where('upah', '>=', $minupah);
         })->when($filters['maxupah'] ?? false, function($query, $maxupah) {
             return $query->where('upah', '<=', $maxupah);
+        })->when($filters['selesai'] ?? false, function($query, $selesai) {
+
+            if ($selesai === "true") {
+                $selesai = 1;
+            } else {
+                $selesai = 0;
+            }
+
+            return $query->where('selesai', '=', $selesai);
         });
     }
 }

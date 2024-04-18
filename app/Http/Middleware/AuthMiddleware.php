@@ -23,6 +23,6 @@ class AuthMiddleware
             }
         }
 
-        return redirect("/");
+        return redirect()->back();
     }
 }

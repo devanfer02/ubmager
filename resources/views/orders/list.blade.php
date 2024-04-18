@@ -16,8 +16,8 @@
         value="{{ request('search') }}"
         name="search"
         />
-      <button class="tw-text-green-700 tw-border-green-700 tw-w-32 lg:tw-w-28 tw-text-center hover:tw-bg-green-700 hover:tw-text-white
-      tw-duration-300 tw-ease-in-out tw-rounded-lg px-2 tw-mx-1 tw-border">Search</button>
+      <button class="tw-text-green-700 tw-border-green-700 tw-text-center hover:tw-bg-green-700 hover:tw-text-white
+      tw-duration-300 tw-ease-in-out tw-rounded-lg px-2 tw-mx-1 tw-border"><iconify-icon icon="ion:search"></iconify-icon></button>
       <button type="button" class="btn tw-border-blue-600 hover:tw-bg-blue-600 tw-group" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         <iconify-icon icon="mdi:filter" class="tw-text-blue-600 group-hover:tw-text-white"></iconify-icon>
       </button>
@@ -55,7 +55,7 @@
         {{ $orders->links() }}
       </div>
     </section>
-    @endif
+  @endif
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <form class="modal-content" action="{{ route(Route::currentRouteName()) }}">
@@ -64,9 +64,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <label for=""></label>
           <x-input id="judul" name="Judul" placeHolder="Masukkan judul order" value="{{ request('customer') }}"/>
+          @auth('driver')
           <x-input id="customer" name="Customer" placeHolder="Masukkan nama customer" value="{{ request('customer') }}"/>
+          @endauth
           <div class="tw-flex tw-w-full tw-flex-row">
             <x-input id="minupah" name="Minimal Upah (Rp)"  placeHolder="10000" value="{{ request('minupah') }}"/>
             <x-input id="maxupah" name="Maksimal Upah (Rp)"  placeHolder="50000" value="{{ request('maxupah') }}"/>
